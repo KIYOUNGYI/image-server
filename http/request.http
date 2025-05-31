@@ -1,0 +1,14 @@
+###
+GET http://{{host}}/healthcheck/live
+
+### 이미지 업로드
+POST http://{{host}}/api/images/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="testimage.png"
+Content-Type: image/png
+
+
+###
+GET http://{{host}}/api/images/view/d87d46c4-3af3-4424-adb0-49f89a740a0d?thumbnail=true
