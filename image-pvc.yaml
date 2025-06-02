@@ -5,8 +5,8 @@ metadata:
   namespace: sns
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: efs-sc
+    - ReadWriteOnce # 로컬 실습시에는 이렇게 설정해야 함
+  storageClassName: local-sns-storage
   resources:
     requests:
       storage: 100Mi

@@ -20,10 +20,14 @@ spec:
     spec:
       volumes:
         - name: image-volume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: image-volume-claim # factorial-log-pvc
       containers:
         - name: image
           image: yky2798/image-server:0.0.2
+          volumeMounts:
+            - mountPath: /images # 영구 볼륨
+              name: image-volume
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
