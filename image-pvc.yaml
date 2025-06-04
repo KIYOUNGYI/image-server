@@ -9,4 +9,4 @@ spec:
   storageClassName: local-sns-storage
   resources:
     requests:
-      storage: 100Mi
+      storage: 3Gi
